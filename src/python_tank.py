@@ -1,9 +1,10 @@
 import pygame
 import os
+import game_main as game
 
 # define a main function
 def main():
-    # get path for loading resource
+    # get path for loading resource from main file
     dir_path = os.path.dirname(os.path.realpath(__file__))
 
     # initialize the pygame module
@@ -21,13 +22,14 @@ def main():
     running = True
     
     # main loop
+    
     while running:
         # event handling, gets all event from the eventqueue
         for event in pygame.event.get():
-            # only do something if the event if of type QUIT
             if event.type == pygame.QUIT:
-                # change the value to False, to exit the main loop
                 running = False
+            elif event.type == pygame.KEYDOWN or event.type == pygame.KEYUP:
+                running = game.process(event)
     
     
 # run the main function only if this module is executed as the main script
