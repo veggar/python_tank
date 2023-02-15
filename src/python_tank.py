@@ -22,6 +22,7 @@ def main():
     running = True
     
     # main loop
+    game.init()
     
     while running:
         # event handling, gets all event from the eventqueue
