@@ -20,20 +20,22 @@ __copyright__ = "DR0ID (c) 2007   http://mypage.bluewin.ch/DR0ID"
 
 # import the pygame module, so you can use it
 import pygame
+import os
 
 # define a main function
 def main():
-    
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+
     # initialize the pygame module
     pygame.init()
     
     # load and set the logo
-    logo = pygame.image.load("logo32x32.png")
+    logo = pygame.image.load(dir_path+"/logo32x32.png")
     pygame.display.set_icon(logo)
     pygame.display.set_caption("minimal program")
     
     # create a surface on screen that has the size of 240 x 180
-    screen = pygame.display.set_mode((240,180))
+    screen = pygame.display.set_mode((320,240))
     
     # define a variable to control the main loop
     running = True
