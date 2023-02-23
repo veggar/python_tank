@@ -17,6 +17,8 @@ class Tank:
         
         self.size = DEFAULT_SIZE
 
+        self.surface = pygame.Surface([self.size, self.size])
+
         self.setPosition(cx,cy)        
         self.setAngle(0)
 
@@ -24,7 +26,7 @@ class Tank:
         self.delete = False
 
     def setPosition(self, x, y):
-        # self.rect = pygame.Rect(x-self.size/2, y-self.size/2, x+self.size/2, y+self.size/2)
+        
         self.cx = x
         self.cy = y
 
@@ -41,6 +43,10 @@ class Tank:
     def setEnergy(self, energy):
         self.energy = energy
 
+    def render(self, display):
+        window = display.window
+        pygame.draw.rect(window, self.color, )
+        return 
     def __str__(self):
         return "cx: {}, cy: {}, angle: {}, energy: {}, state: {}".format(self.cx, self.cy, self.angle, self.energy, self.delete)
 

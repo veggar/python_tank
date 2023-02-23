@@ -43,6 +43,8 @@ def control_input(key):
 def render(display):
     if len(Tanks) > 0:
         print(Tanks[0])
+    for obj in Tanks:
+        obj.render(display)
     return
 
 def quit():
